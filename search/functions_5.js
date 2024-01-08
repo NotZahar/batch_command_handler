@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['logger_65',['Logger',['../classhandler_1_1Logger.html#ab6da606221696a31f35cf471d724e3ed',1,'handler::Logger::Logger(const Logger &amp;)=delete'],['../classhandler_1_1Logger.html#a63d8c7fe79eec1585eab2f0b64d90c08',1,'handler::Logger::Logger(Logger &amp;&amp;)=delete']]]
+  ['identifyexpression_75',['identifyExpression',['../classhandler_1_1Parser.html#a410cae123467a494b92696c977c86672',1,'handler::Parser']]],
+  ['instance_76',['instance',['../classhandler_1_1Logger.html#ab0941248777d5bb94b355b412157f1ef',1,'handler::Logger']]]
 ];

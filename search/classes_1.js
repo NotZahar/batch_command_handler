@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_42',['Logger',['../classhandler_1_1Logger.html',1,'handler']]]
+  ['dbatch_49',['DBatch',['../classhandler_1_1DBatch.html',1,'handler']]]
 ];

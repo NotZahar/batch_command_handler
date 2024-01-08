@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['identifyexpression_18',['identifyExpression',['../classhandler_1_1Parser.html#a410cae123467a494b92696c977c86672',1,'handler::Parser']]],
-  ['instance_19',['instance',['../classhandler_1_1Logger.html#ab0941248777d5bb94b355b412157f1ef',1,'handler::Logger']]]
+  ['end_17',['end',['../classhandler_1_1Batch.html#a33b08e1121f983e4ad72d94aa1232210',1,'handler::Batch::end()'],['../classhandler_1_1DBatch.html#a060ca057ca4cb6df8a7cf344eb96ae07',1,'handler::DBatch::end()']]],
+  ['exec_18',['exec',['../classhandler_1_1BatchCommandHandler.html#afb061ceef60c5dfbc82aa1f8ecb045a0',1,'handler::BatchCommandHandler']]],
+  ['expression_19',['expression',['../classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8d',1,'handler::Parser']]]
 ];

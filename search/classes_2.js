@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['messages_43',['messages',['../structhandler_1_1messages.html',1,'handler']]]
+  ['logger_50',['Logger',['../classhandler_1_1Logger.html',1,'handler']]]
 ];

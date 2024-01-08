@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['handler_16',['handler',['../namespacehandler.html',1,'']]],
-  ['helper_2ehpp_17',['helper.hpp',['../helper_8hpp.html',1,'']]]
+  ['dbatch_16',['DBatch',['../classhandler_1_1DBatch.html#acfc6be4a85678867887adb22a7bec220',1,'handler::DBatch::DBatch()'],['../classhandler_1_1DBatch.html',1,'handler::DBatch&lt; T &gt;']]]
 ];

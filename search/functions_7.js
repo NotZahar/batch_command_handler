@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3d_67',['operator=',['../classhandler_1_1Logger.html#a54177049ba74dea98e9374c0a7bd2606',1,'handler::Logger::operator=(Logger const &amp;)=delete'],['../classhandler_1_1Logger.html#a1a4d78b5ac1908774c15d6c895a25a4b',1,'handler::Logger::operator=(Logger &amp;&amp;)=delete']]]
+  ['main_78',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.cpp'],['../bulk_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;bulk.cpp']]]
 ];

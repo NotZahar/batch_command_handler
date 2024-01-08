@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>batch_command_handler: Шаблон класса handler::SBatch&lt; T &gt;</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">batch_command_handler
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Программа для пакетной обработки команд</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacehandler.html">handler</a></li><li class="navelem"><a class="el" href="classhandler_1_1SBatch.html">SBatch</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pro-methods">Защищенные члены</a> &#124;
+<a href="classhandler_1_1SBatch-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle">
+<div class="title">Шаблон класса handler::SBatch&lt; T &gt;</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="batch_8hpp_source.html">batch.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Граф наследования:handler::SBatch&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classhandler_1_1SBatch__inherit__graph.png" border="0" usemap="#ahandler_1_1SBatch_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="ahandler_1_1SBatch_3_01T_01_4_inherit__map" id="ahandler_1_1SBatch_3_01T_01_4_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,80,168,107"/>
+<area shape="rect" href="classhandler_1_1Batch.html" title=" " alt="" coords="9,5,164,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<div class="dynheader">
+Граф связей класса handler::SBatch&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classhandler_1_1SBatch__coll__graph.png" border="0" usemap="#ahandler_1_1SBatch_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="ahandler_1_1SBatch_3_01T_01_4_coll__map" id="ahandler_1_1SBatch_3_01T_01_4_coll__map">
+<area shape="rect" title=" " alt="" coords="5,80,168,107"/>
+<area shape="rect" href="classhandler_1_1Batch.html" title=" " alt="" coords="9,5,164,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">см. легенду</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a87bd3eecfc1ca453159a89cd35eaf532"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1SBatch.html#a87bd3eecfc1ca453159a89cd35eaf532">SBatch</a> (int <a class="el" href="classhandler_1_1SBatch.html#aaca31bbe31c16a103ada681e44d22e30">size</a>)</td></tr>
+<tr class="separator:a87bd3eecfc1ca453159a89cd35eaf532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66b146d960c9ac57443410fdc0801aa6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1SBatch.html#a66b146d960c9ac57443410fdc0801aa6">~SBatch</a> ()=default</td></tr>
+<tr class="separator:a66b146d960c9ac57443410fdc0801aa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca31bbe31c16a103ada681e44d22e30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1SBatch.html#aaca31bbe31c16a103ada681e44d22e30">size</a> () const</td></tr>
+<tr class="separator:aaca31bbe31c16a103ada681e44d22e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef2b1b004c9b8db3bf01524a26fea402"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1SBatch.html#aef2b1b004c9b8db3bf01524a26fea402">append</a> (T element) override</td></tr>
+<tr class="separator:aef2b1b004c9b8db3bf01524a26fea402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classhandler_1_1Batch"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classhandler_1_1Batch')"><img src="closed.png" alt="-"/>&#160;Открытые члены унаследованные от <a class="el" href="classhandler_1_1Batch.html">handler::Batch&lt; T &gt;</a></td></tr>
+<tr class="memitem:acb9aeb6a7d61faabb2d86e1270a730c0 inherit pub_methods_classhandler_1_1Batch"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1Batch.html#acb9aeb6a7d61faabb2d86e1270a730c0">Batch</a> ()=delete</td></tr>
+<tr class="separator:acb9aeb6a7d61faabb2d86e1270a730c0 inherit pub_methods_classhandler_1_1Batch"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92e6f93c9a189b3f3b0fa97af4a272a8 inherit pub_methods_classhandler_1_1Batch"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1Batch.html#a92e6f93c9a189b3f3b0fa97af4a272a8">Batch</a> (int size)</td></tr>
+<tr class="separator:a92e6f93c9a189b3f3b0fa97af4a272a8 inherit pub_methods_classhandler_1_1Batch"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3fbc139e286907caea21bf5eac12140 inherit pub_methods_classhandler_1_1Batch"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1Batch.html#af3fbc139e286907caea21bf5eac12140">~Batch</a> ()=default</td></tr>
+<tr class="separator:af3fbc139e286907caea21bf5eac12140 inherit pub_methods_classhandler_1_1Batch"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33b08e1121f983e4ad72d94aa1232210 inherit pub_methods_classhandler_1_1Batch"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1Batch.html#a33b08e1121f983e4ad72d94aa1232210">end</a> ()</td></tr>
+<tr class="separator:a33b08e1121f983e4ad72d94aa1232210 inherit pub_methods_classhandler_1_1Batch"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Защищенные члены</h2></td></tr>
+<tr class="memitem:a9cf700e7107f84869550c749e3072c15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1SBatch.html#a9cf700e7107f84869550c749e3072c15">clear</a> () override</td></tr>
+<tr class="separator:a9cf700e7107f84869550c749e3072c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98791ac917e067e3e01ad04c7bd595b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1SBatch.html#ad98791ac917e067e3e01ad04c7bd595b">serialize</a> () const override</td></tr>
+<tr class="separator:ad98791ac917e067e3e01ad04c7bd595b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Дополнительные унаследованные члены</h2></td></tr>
+<tr class="inherit_header pro_attribs_classhandler_1_1Batch"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classhandler_1_1Batch')"><img src="closed.png" alt="-"/>&#160;Защищенные данные унаследованные от <a class="el" href="classhandler_1_1Batch.html">handler::Batch&lt; T &gt;</a></td></tr>
+<tr class="memitem:a11d9eb07ea736e5cb4195d3f5256e16b inherit pro_attribs_classhandler_1_1Batch"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1Batch.html#a11d9eb07ea736e5cb4195d3f5256e16b">_maxSize</a></td></tr>
+<tr class="separator:a11d9eb07ea736e5cb4195d3f5256e16b inherit pro_attribs_classhandler_1_1Batch"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3edede0c20e707ed6844153b28fbe1c5 inherit pro_attribs_classhandler_1_1Batch"><td class="memItemLeft" align="right" valign="top">std::list&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classhandler_1_1Batch.html#a3edede0c20e707ed6844153b28fbe1c5">_batch</a></td></tr>
+<tr class="separator:a3edede0c20e707ed6844153b28fbe1c5 inherit pro_attribs_classhandler_1_1Batch"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a87bd3eecfc1ca453159a89cd35eaf532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87bd3eecfc1ca453159a89cd35eaf532">&#9670;&nbsp;</a></span>SBatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhandler_1_1SBatch.html">handler::SBatch</a>&lt; T &gt;::<a class="el" href="classhandler_1_1SBatch.html">SBatch</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66b146d960c9ac57443410fdc0801aa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b146d960c9ac57443410fdc0801aa6">&#9670;&nbsp;</a></span>~SBatch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classhandler_1_1SBatch.html">handler::SBatch</a>&lt; T &gt;::~<a class="el" href="classhandler_1_1SBatch.html">SBatch</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="aef2b1b004c9b8db3bf01524a26fea402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef2b1b004c9b8db3bf01524a26fea402">&#9670;&nbsp;</a></span>append()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classhandler_1_1SBatch.html">handler::SBatch</a>&lt; T &gt;::append </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>element</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещает <a class="el" href="classhandler_1_1Batch.html#a1eca235b3c8a112b8a3d17aaa58bd220">handler::Batch&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a9cf700e7107f84869550c749e3072c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cf700e7107f84869550c749e3072c15">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classhandler_1_1SBatch.html">handler::SBatch</a>&lt; T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещает <a class="el" href="classhandler_1_1Batch.html#a15151c065ae24d6630575acf8f30b5fe">handler::Batch&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ad98791ac917e067e3e01ad04c7bd595b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad98791ac917e067e3e01ad04c7bd595b">&#9670;&nbsp;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classhandler_1_1SBatch.html">handler::SBatch</a>&lt; T &gt;::serialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Замещает <a class="el" href="classhandler_1_1Batch.html#a5ba0a03b54409709d501a0ec0b8c2818">handler::Batch&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="aaca31bbe31c16a103ada681e44d22e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaca31bbe31c16a103ada681e44d22e30">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classhandler_1_1SBatch.html">handler::SBatch</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>Объявления и описания членов класса находятся в файле:<ul>
+<li>libs/BatchCommandHandler/src/<a class="el" href="batch_8hpp_source.html">batch.hpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

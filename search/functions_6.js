@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['main_66',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;main.cpp'],['../bulk_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;bulk.cpp']]]
+  ['logger_77',['Logger',['../classhandler_1_1Logger.html#ab6da606221696a31f35cf471d724e3ed',1,'handler::Logger::Logger(const Logger &amp;)=delete'],['../classhandler_1_1Logger.html#a63d8c7fe79eec1585eab2f0b64d90c08',1,'handler::Logger::Logger(Logger &amp;&amp;)=delete']]]
 ];

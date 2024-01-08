@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['closingbracetkn_76',['closingBraceTkn',['../classhandler_1_1Parser.html#afb00ca2c1f1ef7a001a8e8ab00eb0c21',1,'handler::Parser']]]
+  ['bulk_92',['BULK',['../structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04',1,'handler::messages']]]
 ];

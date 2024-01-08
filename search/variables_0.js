@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bulk_75',['BULK',['../structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04',1,'handler::messages']]]
+  ['_5fbatch_90',['_batch',['../classhandler_1_1Batch.html#a3edede0c20e707ed6844153b28fbe1c5',1,'handler::Batch']]],
+  ['_5fmaxsize_91',['_maxSize',['../classhandler_1_1Batch.html#a11d9eb07ea736e5cb4195d3f5256e16b',1,'handler::Batch']]]
 ];

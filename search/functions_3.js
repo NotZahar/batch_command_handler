@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['empty_61',['empty',['../classhandler_1_1Batch.html#a6585ae86e3cfee3fb42e49292d46ae60',1,'handler::Batch']]],
-  ['exec_62',['exec',['../classhandler_1_1BatchCommandHandler.html#afb061ceef60c5dfbc82aa1f8ecb045a0',1,'handler::BatchCommandHandler']]]
+  ['dbatch_72',['DBatch',['../classhandler_1_1DBatch.html#acfc6be4a85678867887adb22a7bec220',1,'handler::DBatch']]]
 ];

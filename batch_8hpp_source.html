@@ -76,67 +76,143 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_8hpp.html">helper.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehandler.html">handler</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhandler_1_1Batch.html">Batch</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#acb9aeb6a7d61faabb2d86e1270a730c0">   14</a></span>&#160;        <a class="code" href="classhandler_1_1Batch.html#acb9aeb6a7d61faabb2d86e1270a730c0">Batch</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a92e6f93c9a189b3f3b0fa97af4a272a8">   15</a></span>&#160;        <a class="code" href="classhandler_1_1Batch.html#a92e6f93c9a189b3f3b0fa97af4a272a8">Batch</a>(<span class="keywordtype">int</span> <a class="code" href="classhandler_1_1Batch.html#a51465eff28192bca48f75dc8e03171f4">size</a>) </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            : _maxSize(<a class="code" href="classhandler_1_1Batch.html#a51465eff28192bca48f75dc8e03171f4">size</a>)</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        {}</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#af3fbc139e286907caea21bf5eac12140">   19</a></span>&#160;        <a class="code" href="classhandler_1_1Batch.html#af3fbc139e286907caea21bf5eac12140">~Batch</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a51465eff28192bca48f75dc8e03171f4">   21</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classhandler_1_1Batch.html#a51465eff28192bca48f75dc8e03171f4">size</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordflow">return</span> _batch.size();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        }</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a6585ae86e3cfee3fb42e49292d46ae60">   25</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classhandler_1_1Batch.html#a6585ae86e3cfee3fb42e49292d46ae60">empty</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">return</span> _batch.empty();</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cassert&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_8hpp.html">helper.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehandler.html">handler</a> {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html">   13</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhandler_1_1Batch.html">Batch</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#acb9aeb6a7d61faabb2d86e1270a730c0">   15</a></span>&#160;        <a class="code" href="classhandler_1_1Batch.html#acb9aeb6a7d61faabb2d86e1270a730c0">Batch</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a92e6f93c9a189b3f3b0fa97af4a272a8">   16</a></span>&#160;        <a class="code" href="classhandler_1_1Batch.html#a92e6f93c9a189b3f3b0fa97af4a272a8">Batch</a>(<span class="keywordtype">int</span> size)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            : <a class="code" href="classhandler_1_1Batch.html#a11d9eb07ea736e5cb4195d3f5256e16b">_maxSize</a>(size)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        {}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#af3fbc139e286907caea21bf5eac12140">   20</a></span>&#160;        <a class="code" href="classhandler_1_1Batch.html#af3fbc139e286907caea21bf5eac12140">~Batch</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a1eca235b3c8a112b8a3d17aaa58bd220">   22</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1Batch.html#a1eca235b3c8a112b8a3d17aaa58bd220">append</a>(T element) = 0;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a33b08e1121f983e4ad72d94aa1232210">   24</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1Batch.html#a33b08e1121f983e4ad72d94aa1232210">end</a>() {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            std::cout &lt;&lt; <a class="code" href="classhandler_1_1Batch.html#a5ba0a03b54409709d501a0ec0b8c2818">serialize</a>() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <a class="code" href="classhandler_1_1Batch.html#a15151c065ae24d6630575acf8f30b5fe">clear</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a9d4a31e37ab7ae7ae8bb012174c718b6">   29</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1Batch.html#a9d4a31e37ab7ae7ae8bb012174c718b6">clear</a>() {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            _batch.clear();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a9a00d439c9a181394434dc093f915cce">   33</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1Batch.html#a9a00d439c9a181394434dc093f915cce">append</a>(T element) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            assert(<a class="code" href="classhandler_1_1Batch.html#a51465eff28192bca48f75dc8e03171f4">size</a>() &lt; _maxSize);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            _batch.push_back(std::move(element));</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a11ac3e3a06f2aa064b1d181e0e93861e">   38</a></span>&#160;        std::string <a class="code" href="classhandler_1_1Batch.html#a11ac3e3a06f2aa064b1d181e0e93861e">serialize</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            std::string serializedBatch = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classhandler_1_1Batch.html#a6585ae86e3cfee3fb42e49292d46ae60">empty</a>())</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">return</span> serializedBatch;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            serializedBatch += <a class="code" href="structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04">messages::BULK</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keyword">auto</span> it = _batch.cbegin();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            serializedBatch += (<span class="stringliteral">&quot; &quot;</span> + *it);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">for</span> (++it; it != _batch.cend(); ++it)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                serializedBatch += (<span class="stringliteral">&quot;, &quot;</span> + *it);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">return</span> serializedBatch;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a15151c065ae24d6630575acf8f30b5fe">   30</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1Batch.html#a15151c065ae24d6630575acf8f30b5fe">clear</a>() = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a5ba0a03b54409709d501a0ec0b8c2818">   31</a></span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="classhandler_1_1Batch.html#a5ba0a03b54409709d501a0ec0b8c2818">serialize</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a11d9eb07ea736e5cb4195d3f5256e16b">   33</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classhandler_1_1Batch.html#a11d9eb07ea736e5cb4195d3f5256e16b">_maxSize</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classhandler_1_1Batch.html#a3edede0c20e707ed6844153b28fbe1c5">   34</a></span>&#160;        std::list&lt;T&gt; <a class="code" href="classhandler_1_1Batch.html#a3edede0c20e707ed6844153b28fbe1c5">_batch</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    };</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html">   38</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhandler_1_1DBatch.html">DBatch</a> : <span class="keyword">public</span> <a class="code" href="classhandler_1_1Batch.html">Batch</a>&lt;T&gt; {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html#acfc6be4a85678867887adb22a7bec220">   40</a></span>&#160;        <a class="code" href="classhandler_1_1DBatch.html#acfc6be4a85678867887adb22a7bec220">DBatch</a>(<span class="keywordtype">int</span> size)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            : <a class="code" href="classhandler_1_1Batch.html">Batch</a>&lt;T&gt;(size),</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;              _nestingLevel(0)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html#a5291d13ef8c45ef21afad5301c909b4f">   45</a></span>&#160;        <a class="code" href="classhandler_1_1DBatch.html#a5291d13ef8c45ef21afad5301c909b4f">~DBatch</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html#ac1e7612a1aa9637ba2a2140bcdc1eba9">   47</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1DBatch.html#ac1e7612a1aa9637ba2a2140bcdc1eba9">append</a>(T element)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">throw</span> 1;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::list&lt;T&gt; _batch;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">int</span> _maxSize;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    };</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// BATCH_H</span></div>
-<div class="ttc" id="aclasshandler_1_1Batch_html"><div class="ttname"><a href="classhandler_1_1Batch.html">handler::Batch</a></div><div class="ttdef"><b>Definition:</b> batch.hpp:12</div></div>
-<div class="ttc" id="aclasshandler_1_1Batch_html_a11ac3e3a06f2aa064b1d181e0e93861e"><div class="ttname"><a href="classhandler_1_1Batch.html#a11ac3e3a06f2aa064b1d181e0e93861e">handler::Batch::serialize</a></div><div class="ttdeci">std::string serialize() const</div><div class="ttdef"><b>Definition:</b> batch.hpp:38</div></div>
-<div class="ttc" id="aclasshandler_1_1Batch_html_a51465eff28192bca48f75dc8e03171f4"><div class="ttname"><a href="classhandler_1_1Batch.html#a51465eff28192bca48f75dc8e03171f4">handler::Batch::size</a></div><div class="ttdeci">int size() const</div><div class="ttdef"><b>Definition:</b> batch.hpp:21</div></div>
-<div class="ttc" id="aclasshandler_1_1Batch_html_a6585ae86e3cfee3fb42e49292d46ae60"><div class="ttname"><a href="classhandler_1_1Batch.html#a6585ae86e3cfee3fb42e49292d46ae60">handler::Batch::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> batch.hpp:25</div></div>
-<div class="ttc" id="aclasshandler_1_1Batch_html_a92e6f93c9a189b3f3b0fa97af4a272a8"><div class="ttname"><a href="classhandler_1_1Batch.html#a92e6f93c9a189b3f3b0fa97af4a272a8">handler::Batch::Batch</a></div><div class="ttdeci">Batch(int size)</div><div class="ttdef"><b>Definition:</b> batch.hpp:15</div></div>
-<div class="ttc" id="aclasshandler_1_1Batch_html_a9a00d439c9a181394434dc093f915cce"><div class="ttname"><a href="classhandler_1_1Batch.html#a9a00d439c9a181394434dc093f915cce">handler::Batch::append</a></div><div class="ttdeci">void append(T element)</div><div class="ttdef"><b>Definition:</b> batch.hpp:33</div></div>
-<div class="ttc" id="aclasshandler_1_1Batch_html_a9d4a31e37ab7ae7ae8bb012174c718b6"><div class="ttname"><a href="classhandler_1_1Batch.html#a9d4a31e37ab7ae7ae8bb012174c718b6">handler::Batch::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> batch.hpp:29</div></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html#a92c7437721df8a930959207dcbff5570">   51</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1DBatch.html#a92c7437721df8a930959207dcbff5570">addBlock</a>() {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">throw</span> 1;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html#a67aa736a6bd9d35edb150f4d62156d3b">   56</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classhandler_1_1DBatch.html#a67aa736a6bd9d35edb150f4d62156d3b">blockExists</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">throw</span> 1;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html#a060ca057ca4cb6df8a7cf344eb96ae07">   60</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1DBatch.html#a060ca057ca4cb6df8a7cf344eb96ae07">end</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">throw</span> 1;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html#a0b1a215ab9bdb0280e0d66b8a64c46fe">   65</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1DBatch.html#a0b1a215ab9bdb0280e0d66b8a64c46fe">clear</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <span class="keywordflow">throw</span> 1;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classhandler_1_1DBatch.html#a6a751ee585d4a728b3ac865a716c0193">   69</a></span>&#160;        std::string <a class="code" href="classhandler_1_1DBatch.html#a6a751ee585d4a728b3ac865a716c0193">serialize</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">throw</span> 1;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        std::list&lt;DBatch&gt; _dbatches;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordtype">int</span> _nestingLevel;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    };</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classhandler_1_1SBatch.html">   79</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhandler_1_1SBatch.html">SBatch</a> : <span class="keyword">public</span> <a class="code" href="classhandler_1_1Batch.html">Batch</a>&lt;T&gt; {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="classhandler_1_1SBatch.html#a87bd3eecfc1ca453159a89cd35eaf532">   81</a></span>&#160;        <a class="code" href="classhandler_1_1SBatch.html#a87bd3eecfc1ca453159a89cd35eaf532">SBatch</a>(<span class="keywordtype">int</span> <a class="code" href="classhandler_1_1SBatch.html#aaca31bbe31c16a103ada681e44d22e30">size</a>)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            : <a class="code" href="classhandler_1_1Batch.html">Batch</a>&lt;T&gt;(<a class="code" href="classhandler_1_1SBatch.html#aaca31bbe31c16a103ada681e44d22e30">size</a>)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {}</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classhandler_1_1SBatch.html#a66b146d960c9ac57443410fdc0801aa6">   85</a></span>&#160;        <a class="code" href="classhandler_1_1SBatch.html#a66b146d960c9ac57443410fdc0801aa6">~SBatch</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="classhandler_1_1SBatch.html#aaca31bbe31c16a103ada681e44d22e30">   87</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classhandler_1_1SBatch.html#aaca31bbe31c16a103ada681e44d22e30">size</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classhandler_1_1Batch.html">Batch&lt;T&gt;::_batch</a>.size();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classhandler_1_1SBatch.html#aef2b1b004c9b8db3bf01524a26fea402">   91</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1SBatch.html#aef2b1b004c9b8db3bf01524a26fea402">append</a>(T element)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            assert(<a class="code" href="classhandler_1_1SBatch.html#aaca31bbe31c16a103ada681e44d22e30">size</a>() &lt; <a class="code" href="classhandler_1_1Batch.html">Batch&lt;T&gt;::_maxSize</a>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="classhandler_1_1Batch.html">Batch&lt;T&gt;::_batch</a>.push_back(std::move(element));</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classhandler_1_1SBatch.html#a9cf700e7107f84869550c749e3072c15">   97</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1SBatch.html#a9cf700e7107f84869550c749e3072c15">clear</a>()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;            <a class="code" href="classhandler_1_1Batch.html">Batch&lt;T&gt;::_batch</a>.<a class="code" href="classhandler_1_1Batch.html#a15151c065ae24d6630575acf8f30b5fe">clear</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classhandler_1_1SBatch.html#ad98791ac917e067e3e01ad04c7bd595b">  101</a></span>&#160;        std::string <a class="code" href="classhandler_1_1SBatch.html#ad98791ac917e067e3e01ad04c7bd595b">serialize</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            std::string serializedBatch = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="classhandler_1_1Batch.html">Batch&lt;T&gt;::_batch</a>.empty())</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                <span class="keywordflow">return</span> serializedBatch;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            serializedBatch += <a class="code" href="structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04">messages::BULK</a>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            <span class="keyword">auto</span> it = <a class="code" href="classhandler_1_1Batch.html">Batch&lt;T&gt;::_batch</a>.cbegin();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            serializedBatch += (<span class="stringliteral">&quot; &quot;</span> + *it);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            <span class="keywordflow">for</span> (++it; it != <a class="code" href="classhandler_1_1Batch.html">Batch&lt;T&gt;::_batch</a>.cend(); ++it)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                serializedBatch += (<span class="stringliteral">&quot;, &quot;</span> + *it);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            <span class="keywordflow">return</span> serializedBatch;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    };</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// BATCH_H</span></div>
+<div class="ttc" id="aclasshandler_1_1Batch_html"><div class="ttname"><a href="classhandler_1_1Batch.html">handler::Batch</a></div><div class="ttdef"><b>Definition:</b> batch.hpp:13</div></div>
+<div class="ttc" id="aclasshandler_1_1Batch_html_a11d9eb07ea736e5cb4195d3f5256e16b"><div class="ttname"><a href="classhandler_1_1Batch.html#a11d9eb07ea736e5cb4195d3f5256e16b">handler::Batch::_maxSize</a></div><div class="ttdeci">int _maxSize</div><div class="ttdef"><b>Definition:</b> batch.hpp:33</div></div>
+<div class="ttc" id="aclasshandler_1_1Batch_html_a15151c065ae24d6630575acf8f30b5fe"><div class="ttname"><a href="classhandler_1_1Batch.html#a15151c065ae24d6630575acf8f30b5fe">handler::Batch::clear</a></div><div class="ttdeci">virtual void clear()=0</div></div>
+<div class="ttc" id="aclasshandler_1_1Batch_html_a1eca235b3c8a112b8a3d17aaa58bd220"><div class="ttname"><a href="classhandler_1_1Batch.html#a1eca235b3c8a112b8a3d17aaa58bd220">handler::Batch::append</a></div><div class="ttdeci">virtual void append(T element)=0</div></div>
+<div class="ttc" id="aclasshandler_1_1Batch_html_a33b08e1121f983e4ad72d94aa1232210"><div class="ttname"><a href="classhandler_1_1Batch.html#a33b08e1121f983e4ad72d94aa1232210">handler::Batch::end</a></div><div class="ttdeci">virtual void end()</div><div class="ttdef"><b>Definition:</b> batch.hpp:24</div></div>
+<div class="ttc" id="aclasshandler_1_1Batch_html_a3edede0c20e707ed6844153b28fbe1c5"><div class="ttname"><a href="classhandler_1_1Batch.html#a3edede0c20e707ed6844153b28fbe1c5">handler::Batch::_batch</a></div><div class="ttdeci">std::list&lt; T &gt; _batch</div><div class="ttdef"><b>Definition:</b> batch.hpp:34</div></div>
+<div class="ttc" id="aclasshandler_1_1Batch_html_a5ba0a03b54409709d501a0ec0b8c2818"><div class="ttname"><a href="classhandler_1_1Batch.html#a5ba0a03b54409709d501a0ec0b8c2818">handler::Batch::serialize</a></div><div class="ttdeci">virtual std::string serialize() const =0</div></div>
+<div class="ttc" id="aclasshandler_1_1Batch_html_a92e6f93c9a189b3f3b0fa97af4a272a8"><div class="ttname"><a href="classhandler_1_1Batch.html#a92e6f93c9a189b3f3b0fa97af4a272a8">handler::Batch::Batch</a></div><div class="ttdeci">Batch(int size)</div><div class="ttdef"><b>Definition:</b> batch.hpp:16</div></div>
 <div class="ttc" id="aclasshandler_1_1Batch_html_acb9aeb6a7d61faabb2d86e1270a730c0"><div class="ttname"><a href="classhandler_1_1Batch.html#acb9aeb6a7d61faabb2d86e1270a730c0">handler::Batch::Batch</a></div><div class="ttdeci">Batch()=delete</div></div>
 <div class="ttc" id="aclasshandler_1_1Batch_html_af3fbc139e286907caea21bf5eac12140"><div class="ttname"><a href="classhandler_1_1Batch.html#af3fbc139e286907caea21bf5eac12140">handler::Batch::~Batch</a></div><div class="ttdeci">~Batch()=default</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html"><div class="ttname"><a href="classhandler_1_1DBatch.html">handler::DBatch</a></div><div class="ttdef"><b>Definition:</b> batch.hpp:38</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html_a060ca057ca4cb6df8a7cf344eb96ae07"><div class="ttname"><a href="classhandler_1_1DBatch.html#a060ca057ca4cb6df8a7cf344eb96ae07">handler::DBatch::end</a></div><div class="ttdeci">void end() override</div><div class="ttdef"><b>Definition:</b> batch.hpp:60</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html_a0b1a215ab9bdb0280e0d66b8a64c46fe"><div class="ttname"><a href="classhandler_1_1DBatch.html#a0b1a215ab9bdb0280e0d66b8a64c46fe">handler::DBatch::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdef"><b>Definition:</b> batch.hpp:65</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html_a5291d13ef8c45ef21afad5301c909b4f"><div class="ttname"><a href="classhandler_1_1DBatch.html#a5291d13ef8c45ef21afad5301c909b4f">handler::DBatch::~DBatch</a></div><div class="ttdeci">~DBatch()=default</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html_a67aa736a6bd9d35edb150f4d62156d3b"><div class="ttname"><a href="classhandler_1_1DBatch.html#a67aa736a6bd9d35edb150f4d62156d3b">handler::DBatch::blockExists</a></div><div class="ttdeci">bool blockExists() const</div><div class="ttdef"><b>Definition:</b> batch.hpp:56</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html_a6a751ee585d4a728b3ac865a716c0193"><div class="ttname"><a href="classhandler_1_1DBatch.html#a6a751ee585d4a728b3ac865a716c0193">handler::DBatch::serialize</a></div><div class="ttdeci">std::string serialize() const override</div><div class="ttdef"><b>Definition:</b> batch.hpp:69</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html_a92c7437721df8a930959207dcbff5570"><div class="ttname"><a href="classhandler_1_1DBatch.html#a92c7437721df8a930959207dcbff5570">handler::DBatch::addBlock</a></div><div class="ttdeci">void addBlock()</div><div class="ttdef"><b>Definition:</b> batch.hpp:51</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html_ac1e7612a1aa9637ba2a2140bcdc1eba9"><div class="ttname"><a href="classhandler_1_1DBatch.html#ac1e7612a1aa9637ba2a2140bcdc1eba9">handler::DBatch::append</a></div><div class="ttdeci">void append(T element) override</div><div class="ttdef"><b>Definition:</b> batch.hpp:47</div></div>
+<div class="ttc" id="aclasshandler_1_1DBatch_html_acfc6be4a85678867887adb22a7bec220"><div class="ttname"><a href="classhandler_1_1DBatch.html#acfc6be4a85678867887adb22a7bec220">handler::DBatch::DBatch</a></div><div class="ttdeci">DBatch(int size)</div><div class="ttdef"><b>Definition:</b> batch.hpp:40</div></div>
+<div class="ttc" id="aclasshandler_1_1SBatch_html"><div class="ttname"><a href="classhandler_1_1SBatch.html">handler::SBatch</a></div><div class="ttdef"><b>Definition:</b> batch.hpp:79</div></div>
+<div class="ttc" id="aclasshandler_1_1SBatch_html_a66b146d960c9ac57443410fdc0801aa6"><div class="ttname"><a href="classhandler_1_1SBatch.html#a66b146d960c9ac57443410fdc0801aa6">handler::SBatch::~SBatch</a></div><div class="ttdeci">~SBatch()=default</div></div>
+<div class="ttc" id="aclasshandler_1_1SBatch_html_a87bd3eecfc1ca453159a89cd35eaf532"><div class="ttname"><a href="classhandler_1_1SBatch.html#a87bd3eecfc1ca453159a89cd35eaf532">handler::SBatch::SBatch</a></div><div class="ttdeci">SBatch(int size)</div><div class="ttdef"><b>Definition:</b> batch.hpp:81</div></div>
+<div class="ttc" id="aclasshandler_1_1SBatch_html_a9cf700e7107f84869550c749e3072c15"><div class="ttname"><a href="classhandler_1_1SBatch.html#a9cf700e7107f84869550c749e3072c15">handler::SBatch::clear</a></div><div class="ttdeci">void clear() override</div><div class="ttdef"><b>Definition:</b> batch.hpp:97</div></div>
+<div class="ttc" id="aclasshandler_1_1SBatch_html_aaca31bbe31c16a103ada681e44d22e30"><div class="ttname"><a href="classhandler_1_1SBatch.html#aaca31bbe31c16a103ada681e44d22e30">handler::SBatch::size</a></div><div class="ttdeci">int size() const</div><div class="ttdef"><b>Definition:</b> batch.hpp:87</div></div>
+<div class="ttc" id="aclasshandler_1_1SBatch_html_ad98791ac917e067e3e01ad04c7bd595b"><div class="ttname"><a href="classhandler_1_1SBatch.html#ad98791ac917e067e3e01ad04c7bd595b">handler::SBatch::serialize</a></div><div class="ttdeci">std::string serialize() const override</div><div class="ttdef"><b>Definition:</b> batch.hpp:101</div></div>
+<div class="ttc" id="aclasshandler_1_1SBatch_html_aef2b1b004c9b8db3bf01524a26fea402"><div class="ttname"><a href="classhandler_1_1SBatch.html#aef2b1b004c9b8db3bf01524a26fea402">handler::SBatch::append</a></div><div class="ttdeci">void append(T element) override</div><div class="ttdef"><b>Definition:</b> batch.hpp:91</div></div>
 <div class="ttc" id="ahelper_8hpp_html"><div class="ttname"><a href="helper_8hpp.html">helper.hpp</a></div></div>
 <div class="ttc" id="anamespacehandler_html"><div class="ttname"><a href="namespacehandler.html">handler</a></div><div class="ttdef"><b>Definition:</b> batch_command_handler.hpp:6</div></div>
 <div class="ttc" id="astructhandler_1_1messages_html_a48c72a367a99fdc23716b6e4ff21dc04"><div class="ttname"><a href="structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04">handler::messages::BULK</a></div><div class="ttdeci">static const std::string BULK</div><div class="ttdef"><b>Definition:</b> helper.hpp:8</div></div>

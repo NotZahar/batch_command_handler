@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['_7ebatch_72',['~Batch',['../classhandler_1_1Batch.html#af3fbc139e286907caea21bf5eac12140',1,'handler::Batch']]],
-  ['_7ebatchcommandhandler_73',['~BatchCommandHandler',['../classhandler_1_1BatchCommandHandler.html#a8358a0d98c5c415a472959d48c1e5bc8',1,'handler::BatchCommandHandler']]],
-  ['_7eparser_74',['~Parser',['../classhandler_1_1Parser.html#a2ddc71a3c824eb18b0e6b6232eec10d5',1,'handler::Parser']]]
+  ['test_84',['TEST',['../bulk_8cpp.html#acb23c1350bcf0e1a6e3eade20981122e',1,'bulk.cpp']]]
 ];

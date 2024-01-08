@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['batch_1',['Batch',['../classhandler_1_1Batch.html#acb9aeb6a7d61faabb2d86e1270a730c0',1,'handler::Batch::Batch()=delete'],['../classhandler_1_1Batch.html#a92e6f93c9a189b3f3b0fa97af4a272a8',1,'handler::Batch::Batch(int size)'],['../classhandler_1_1Batch.html',1,'handler::Batch&lt; T &gt;']]],
-  ['batch_2ehpp_2',['batch.hpp',['../batch_8hpp.html',1,'']]],
-  ['batch_5fcommand_5fhandler_2ecpp_3',['batch_command_handler.cpp',['../batch__command__handler_8cpp.html',1,'']]],
-  ['batch_5fcommand_5fhandler_2ehpp_4',['batch_command_handler.hpp',['../batch__command__handler_8hpp.html',1,'']]],
-  ['batchcommandhandler_5',['BatchCommandHandler',['../classhandler_1_1BatchCommandHandler.html#af3231cf741956326cdd4abae8d820b01',1,'handler::BatchCommandHandler::BatchCommandHandler()=delete'],['../classhandler_1_1BatchCommandHandler.html#a2dcf9ba721b1a1c8a50da43bf6b39756',1,'handler::BatchCommandHandler::BatchCommandHandler(int batchSize)'],['../classhandler_1_1BatchCommandHandler.html',1,'handler::BatchCommandHandler']]],
-  ['bulk_6',['BULK',['../structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04',1,'handler::messages']]],
-  ['bulk_2ecpp_7',['bulk.cpp',['../bulk_8cpp.html',1,'']]]
+  ['addblock_2',['addBlock',['../classhandler_1_1DBatch.html#a92c7437721df8a930959207dcbff5570',1,'handler::DBatch']]],
+  ['append_3',['append',['../classhandler_1_1Batch.html#a1eca235b3c8a112b8a3d17aaa58bd220',1,'handler::Batch::append()'],['../classhandler_1_1DBatch.html#ac1e7612a1aa9637ba2a2140bcdc1eba9',1,'handler::DBatch::append()'],['../classhandler_1_1SBatch.html#aef2b1b004c9b8db3bf01524a26fea402',1,'handler::SBatch::append()']]]
 ];

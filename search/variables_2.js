@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['empty_5fbatch_77',['EMPTY_BATCH',['../structhandler_1_1messages.html#a0f7573d05ed00bc9fbc5c08a12ebe539',1,'handler::messages']]]
+  ['closingbracetkn_93',['closingBraceTkn',['../classhandler_1_1Parser.html#afb00ca2c1f1ef7a001a8e8ab00eb0c21',1,'handler::Parser']]]
 ];
