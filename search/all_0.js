@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['batch_5fcommand_5fhandler_2ehpp_0',['batch_command_handler.hpp',['../batch__command__handler_8hpp.html',1,'']]],
-  ['bulk_2ecpp_1',['bulk.cpp',['../bulk_8cpp.html',1,'']]]
+  ['append_0',['append',['../classhandler_1_1Batch.html#a9a00d439c9a181394434dc093f915cce',1,'handler::Batch']]]
 ];

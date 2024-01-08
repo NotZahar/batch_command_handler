@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>batch_command_handler: Исходный файл libs/BatchCommandHandler/src/parser.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">batch_command_handler
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Программа для пакетной обработки команд</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li><li class="navelem"><a class="el" href="dir_9d27b77356d79d375564e55b4a02dfc0.html">BatchCommandHandler</a></li><li class="navelem"><a class="el" href="dir_7f688ae4edde227a684f52f1b1447f71.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">parser.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="parser_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef PARSER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define PARSER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehandler.html">handler</a> {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classhandler_1_1Parser.html">    7</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhandler_1_1Parser.html">Parser</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8d">    9</a></span>&#160;        <span class="keyword">enum class</span> <a class="code" href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8d">expression</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <a class="code" href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8da2f1ebe77bca6ed5fadf405cf8fd7a5b0">openingBrace</a>,</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            <a class="code" href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8da1d178f58015d8d8fa7ab28e7a150ef30">closingBrace</a>,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;            <a class="code" href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8da1dccadfed7bcbb036c56a4afb97e906f">command</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        };</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classhandler_1_1Parser.html#afaa9b76a06c29fe8e37479b9a7666652">   15</a></span>&#160;        <a class="code" href="classhandler_1_1Parser.html#afaa9b76a06c29fe8e37479b9a7666652">Parser</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classhandler_1_1Parser.html#a2ddc71a3c824eb18b0e6b6232eec10d5">   17</a></span>&#160;        <a class="code" href="classhandler_1_1Parser.html#a2ddc71a3c824eb18b0e6b6232eec10d5">~Parser</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">static</span> <a class="code" href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8d">expression</a> <a class="code" href="classhandler_1_1Parser.html#a410cae123467a494b92696c977c86672">identifyExpression</a>(<span class="keyword">const</span> std::string_view <span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classhandler_1_1Parser.html#a1f5a55cd4cb392dced67bee8a9975232">   21</a></span>&#160;        <span class="keyword">static</span> constexpr std::string_view <a class="code" href="classhandler_1_1Parser.html#a1f5a55cd4cb392dced67bee8a9975232">openingBraceTkn</a> = <span class="stringliteral">&quot;{&quot;</span>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classhandler_1_1Parser.html#afb00ca2c1f1ef7a001a8e8ab00eb0c21">   22</a></span>&#160;        <span class="keyword">static</span> constexpr std::string_view <a class="code" href="classhandler_1_1Parser.html#afb00ca2c1f1ef7a001a8e8ab00eb0c21">closingBraceTkn</a> = <span class="stringliteral">&quot;}&quot;</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// PARSER_H</span></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html"><div class="ttname"><a href="classhandler_1_1Parser.html">handler::Parser</a></div><div class="ttdef"><b>Definition:</b> parser.hpp:7</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_a1f5a55cd4cb392dced67bee8a9975232"><div class="ttname"><a href="classhandler_1_1Parser.html#a1f5a55cd4cb392dced67bee8a9975232">handler::Parser::openingBraceTkn</a></div><div class="ttdeci">static constexpr std::string_view openingBraceTkn</div><div class="ttdef"><b>Definition:</b> parser.hpp:21</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_a2ddc71a3c824eb18b0e6b6232eec10d5"><div class="ttname"><a href="classhandler_1_1Parser.html#a2ddc71a3c824eb18b0e6b6232eec10d5">handler::Parser::~Parser</a></div><div class="ttdeci">~Parser()=default</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_a410cae123467a494b92696c977c86672"><div class="ttname"><a href="classhandler_1_1Parser.html#a410cae123467a494b92696c977c86672">handler::Parser::identifyExpression</a></div><div class="ttdeci">static expression identifyExpression(const std::string_view string)</div><div class="ttdef"><b>Definition:</b> parser.cpp:7</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_a9be92fc042f9cf3db04b6f1c0def3a8d"><div class="ttname"><a href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8d">handler::Parser::expression</a></div><div class="ttdeci">expression</div><div class="ttdef"><b>Definition:</b> parser.hpp:9</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_a9be92fc042f9cf3db04b6f1c0def3a8da1d178f58015d8d8fa7ab28e7a150ef30"><div class="ttname"><a href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8da1d178f58015d8d8fa7ab28e7a150ef30">handler::Parser::expression::closingBrace</a></div><div class="ttdeci">@ closingBrace</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_a9be92fc042f9cf3db04b6f1c0def3a8da1dccadfed7bcbb036c56a4afb97e906f"><div class="ttname"><a href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8da1dccadfed7bcbb036c56a4afb97e906f">handler::Parser::expression::command</a></div><div class="ttdeci">@ command</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_a9be92fc042f9cf3db04b6f1c0def3a8da2f1ebe77bca6ed5fadf405cf8fd7a5b0"><div class="ttname"><a href="classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8da2f1ebe77bca6ed5fadf405cf8fd7a5b0">handler::Parser::expression::openingBrace</a></div><div class="ttdeci">@ openingBrace</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_afaa9b76a06c29fe8e37479b9a7666652"><div class="ttname"><a href="classhandler_1_1Parser.html#afaa9b76a06c29fe8e37479b9a7666652">handler::Parser::Parser</a></div><div class="ttdeci">Parser()=default</div></div>
+<div class="ttc" id="aclasshandler_1_1Parser_html_afb00ca2c1f1ef7a001a8e8ab00eb0c21"><div class="ttname"><a href="classhandler_1_1Parser.html#afb00ca2c1f1ef7a001a8e8ab00eb0c21">handler::Parser::closingBraceTkn</a></div><div class="ttdeci">static constexpr std::string_view closingBraceTkn</div><div class="ttdef"><b>Definition:</b> parser.hpp:22</div></div>
+<div class="ttc" id="anamespacehandler_html"><div class="ttname"><a href="namespacehandler.html">handler</a></div><div class="ttdef"><b>Definition:</b> batch_command_handler.hpp:6</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

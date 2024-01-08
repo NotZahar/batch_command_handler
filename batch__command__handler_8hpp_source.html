@@ -74,17 +74,29 @@ $(function() {
 <a href="batch__command__handler_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BATCH_COMMAND_HANDLER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BATCH_COMMAND_HANDLER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;filesystem&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="helper_8hpp.html">helper.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="namespacehandler.html">    8</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehandler.html">handler</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="namespacehandler.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehandler.html">handler</a> {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classhandler_1_1BatchCommandHandler.html">    7</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classhandler_1_1BatchCommandHandler.html">BatchCommandHandler</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classhandler_1_1BatchCommandHandler.html#af3231cf741956326cdd4abae8d820b01">    9</a></span>&#160;        <a class="code" href="classhandler_1_1BatchCommandHandler.html#af3231cf741956326cdd4abae8d820b01">BatchCommandHandler</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classhandler_1_1BatchCommandHandler.html#af3231cf741956326cdd4abae8d820b01">BatchCommandHandler</a>(<span class="keywordtype">int</span> batchSize);</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// BATCH_COMMAND_HANDLER_H</span></div>
-<div class="ttc" id="ahelper_8hpp_html"><div class="ttname"><a href="helper_8hpp.html">helper.hpp</a></div></div>
-<div class="ttc" id="anamespacehandler_html"><div class="ttname"><a href="namespacehandler.html">handler</a></div><div class="ttdef"><b>Definition:</b> batch_command_handler.hpp:8</div></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classhandler_1_1BatchCommandHandler.html#a8358a0d98c5c415a472959d48c1e5bc8">   12</a></span>&#160;        <a class="code" href="classhandler_1_1BatchCommandHandler.html#a8358a0d98c5c415a472959d48c1e5bc8">~BatchCommandHandler</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classhandler_1_1BatchCommandHandler.html#afb061ceef60c5dfbc82aa1f8ecb045a0">exec</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> _batchSize;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// BATCH_COMMAND_HANDLER_H</span></div>
+<div class="ttc" id="aclasshandler_1_1BatchCommandHandler_html"><div class="ttname"><a href="classhandler_1_1BatchCommandHandler.html">handler::BatchCommandHandler</a></div><div class="ttdef"><b>Definition:</b> batch_command_handler.hpp:7</div></div>
+<div class="ttc" id="aclasshandler_1_1BatchCommandHandler_html_a8358a0d98c5c415a472959d48c1e5bc8"><div class="ttname"><a href="classhandler_1_1BatchCommandHandler.html#a8358a0d98c5c415a472959d48c1e5bc8">handler::BatchCommandHandler::~BatchCommandHandler</a></div><div class="ttdeci">~BatchCommandHandler()=default</div></div>
+<div class="ttc" id="aclasshandler_1_1BatchCommandHandler_html_af3231cf741956326cdd4abae8d820b01"><div class="ttname"><a href="classhandler_1_1BatchCommandHandler.html#af3231cf741956326cdd4abae8d820b01">handler::BatchCommandHandler::BatchCommandHandler</a></div><div class="ttdeci">BatchCommandHandler()=delete</div></div>
+<div class="ttc" id="aclasshandler_1_1BatchCommandHandler_html_afb061ceef60c5dfbc82aa1f8ecb045a0"><div class="ttname"><a href="classhandler_1_1BatchCommandHandler.html#afb061ceef60c5dfbc82aa1f8ecb045a0">handler::BatchCommandHandler::exec</a></div><div class="ttdeci">void exec()</div><div class="ttdef"><b>Definition:</b> batch_command_handler.cpp:14</div></div>
+<div class="ttc" id="anamespacehandler_html"><div class="ttname"><a href="namespacehandler.html">handler</a></div><div class="ttdef"><b>Definition:</b> batch_command_handler.hpp:6</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

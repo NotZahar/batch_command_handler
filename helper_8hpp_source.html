@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>batch_command_handler: Исходный файл libs/BatchCommandHandler/include/helper.hpp</title>
+<title>batch_command_handler: Исходный файл libs/BatchCommandHandler/src/helper.hpp</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li><li class="navelem"><a class="el" href="dir_9d27b77356d79d375564e55b4a02dfc0.html">BatchCommandHandler</a></li><li class="navelem"><a class="el" href="dir_51a24ee45711e53c6609a59202951a62.html">include</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li><li class="navelem"><a class="el" href="dir_9d27b77356d79d375564e55b4a02dfc0.html">BatchCommandHandler</a></li><li class="navelem"><a class="el" href="dir_7f688ae4edde227a684f52f1b1447f71.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -74,12 +74,20 @@ $(function() {
 <a href="helper_8hpp.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HELPER_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HELPER_H</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehandler.html">handler</a> {</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// HELPER_H</span></div>
-<div class="ttc" id="anamespacehandler_html"><div class="ttname"><a href="namespacehandler.html">handler</a></div><div class="ttdef"><b>Definition:</b> batch_command_handler.hpp:8</div></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacehandler.html">handler</a> {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="structhandler_1_1messages.html">    7</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structhandler_1_1messages.html">messages</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04">    8</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04">BULK</a> = <span class="stringliteral">&quot;bulk:&quot;</span>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="structhandler_1_1messages.html#a0f7573d05ed00bc9fbc5c08a12ebe539">    9</a></span>&#160;        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> std::string <a class="code" href="structhandler_1_1messages.html#a0f7573d05ed00bc9fbc5c08a12ebe539">EMPTY_BATCH</a> = <span class="stringliteral">&quot;no items&quot;</span>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    };</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// HELPER_H</span></div>
+<div class="ttc" id="anamespacehandler_html"><div class="ttname"><a href="namespacehandler.html">handler</a></div><div class="ttdef"><b>Definition:</b> batch_command_handler.hpp:6</div></div>
+<div class="ttc" id="astructhandler_1_1messages_html"><div class="ttname"><a href="structhandler_1_1messages.html">handler::messages</a></div><div class="ttdef"><b>Definition:</b> helper.hpp:7</div></div>
+<div class="ttc" id="astructhandler_1_1messages_html_a0f7573d05ed00bc9fbc5c08a12ebe539"><div class="ttname"><a href="structhandler_1_1messages.html#a0f7573d05ed00bc9fbc5c08a12ebe539">handler::messages::EMPTY_BATCH</a></div><div class="ttdeci">static const std::string EMPTY_BATCH</div><div class="ttdef"><b>Definition:</b> helper.hpp:9</div></div>
+<div class="ttc" id="astructhandler_1_1messages_html_a48c72a367a99fdc23716b6e4ff21dc04"><div class="ttname"><a href="structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04">handler::messages::BULK</a></div><div class="ttdeci">static const std::string BULK</div><div class="ttdef"><b>Definition:</b> helper.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

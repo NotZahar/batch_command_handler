@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['main_4',['main',['../main_8cpp.html#a2c3f6775325c30275d11c6abee2db6a0',1,'main(int, char **):&#160;main.cpp'],['../bulk_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main(int argc, char **argv):&#160;bulk.cpp']]],
-  ['main_2ecpp_5',['main.cpp',['../main_8cpp.html',1,'']]]
+  ['clear_8',['clear',['../classhandler_1_1Batch.html#a9d4a31e37ab7ae7ae8bb012174c718b6',1,'handler::Batch']]],
+  ['closingbrace_9',['closingBrace',['../classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8da1d178f58015d8d8fa7ab28e7a150ef30',1,'handler::Parser']]],
+  ['closingbracetkn_10',['closingBraceTkn',['../classhandler_1_1Parser.html#afb00ca2c1f1ef7a001a8e8ab00eb0c21',1,'handler::Parser']]],
+  ['command_11',['command',['../classhandler_1_1Parser.html#a9be92fc042f9cf3db04b6f1c0def3a8da1dccadfed7bcbb036c56a4afb97e906f',1,'handler::Parser']]]
 ];
