@@ -12,24 +12,31 @@ namespace handler {
     {}
 
     void BatchCommandHandler::exec() {
-        Batch<std::string> batch(_batchSize);
+        SBatch<std::string> sbatch(_batchSize);
+        DBatch<std::string> dbatch(_batchSize);
         for (std::string in; std::getline(std::cin, in);) {
             switch (Parser::identifyExpression(in)) {
             case Parser::expression::openingBrace:
+                sbatch.end();
+                dbatch.addBlock();
                 break;
             case Parser::expression::closingBrace:
+                dbatch.end();
                 break;
             case Parser::expression::command:
-                batch.append(in);
+                if (dbatch.blockExists()) {
+                    dbatch.append(in);
+                    continue;
+                }
+                
+                sbatch.append(in);
                 break;
             }
 
-            if (batch.size() == _batchSize) {
-                std::cout << batch.serialize() << '\n';
-                batch.clear();
-            }
+            if (sbatch.size() == _batchSize)
+                sbatch.end();
         }
 
-        std::cout << batch.serialize() << '\n';
+        sbatch.end();
     }
 }

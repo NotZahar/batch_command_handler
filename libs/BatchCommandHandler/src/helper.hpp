@@ -6,7 +6,6 @@
 namespace handler {
     struct messages {
         inline static const std::string BULK = "bulk:";
-        inline static const std::string EMPTY_BATCH = "no items";
     };
 }
 
