@@ -22,6 +22,8 @@ namespace handler {
         virtual void append(T element) = 0;
         
         virtual void end() {
+            if (_batch.empty())
+                return;
             std::cout << serialize() << '\n';
             clear();
         }
@@ -39,39 +41,57 @@ namespace handler {
     public:
         DBatch(int size)
             : Batch<T>(size),
-              _nestingLevel(0)
+              _noNestingLevel(0),
+              _nestingLevel(_noNestingLevel)
         {}
 
         ~DBatch() = default;
         
         void append(T element) override {
-            throw 1;
+            assert(blockExists());
+            Batch<T>::_batch.push_back(element);
         }
 
         void addBlock() {
-
-            throw 1;
+            _nestingLevel += 1;
         }
 
         bool blockExists() const {
-            throw 1;
+            return _nestingLevel != _noNestingLevel;
         }
 
         void end() override {
-            throw 1;
+            if (Batch<T>::_batch.empty())
+                return;
+
+            _nestingLevel -= 1;
+            if (!blockExists()) {
+                std::cout << serialize() << '\n';
+                clear();                
+            }
         }
 
     protected:
         void clear() override {
-            throw 1;
+            Batch<T>::_batch.clear();
+            _nestingLevel = _noNestingLevel;
         }
 
         std::string serialize() const override {
-            throw 1;
+            std::string serializedBatch = "";
+            if (Batch<T>::_batch.empty())
+                return serializedBatch;
+
+            serializedBatch += messages::BULK;
+            auto it = Batch<T>::_batch.cbegin();
+            serializedBatch += (" " + *it);
+            for (++it; it != Batch<T>::_batch.cend(); ++it)
+                serializedBatch += (", " + *it);
+            return serializedBatch;
         }
 
     private:
-        std::list<DBatch> _dbatches;
+        const int _noNestingLevel;
         int _nestingLevel;
     };
     
@@ -90,7 +110,7 @@ namespace handler {
         
         void append(T element) override {
             assert(size() < Batch<T>::_maxSize);
-            Batch<T>::_batch.push_back(std::move(element));
+            Batch<T>::_batch.push_back(element);
         }
 
     protected:

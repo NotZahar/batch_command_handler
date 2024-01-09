@@ -1,6 +1,8 @@
 #ifndef LOGGER_H
 #define LOGGER_H
 
+#include <string_view>
+
 namespace handler {
     class Logger final {
     public:
@@ -10,6 +12,7 @@ namespace handler {
         Logger& operator=(Logger &&) = delete;
         
         static Logger& instance();
+        void log(const std::string& name, const std::string_view string) const;
 
     private:
         Logger() = default;
