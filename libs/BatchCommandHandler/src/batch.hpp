@@ -6,6 +6,7 @@
 #include <memory>
 #include <cassert>
 
+#include "logger.hpp"
 #include "helper.hpp"
 
 namespace handler {
@@ -24,13 +25,26 @@ namespace handler {
         virtual void end() {
             if (_batch.empty())
                 return;
-            std::cout << serialize() << '\n';
+
+            Logger::instance().log(serialize());
             clear();
         }
 
     protected:
         virtual void clear() = 0;
-        virtual std::string serialize() const = 0;
+        
+        virtual std::string serialize() const {
+            std::string serializedBatch = "";
+            if (_batch.empty())
+                return serializedBatch;
+
+            serializedBatch += messages::BULK_CONTENT;
+            auto it = _batch.cbegin();
+            serializedBatch += (" " + *it);
+            for (++it; it != _batch.cend(); ++it)
+                serializedBatch += (", " + *it);
+            return serializedBatch;
+        }
 
         int _maxSize;
         std::list<T> _batch;
@@ -66,7 +80,7 @@ namespace handler {
 
             _nestingLevel -= 1;
             if (!blockExists()) {
-                std::cout << serialize() << '\n';
+                Logger::instance().log(Batch<T>::serialize());
                 clear();                
             }
         }
@@ -75,19 +89,6 @@ namespace handler {
         void clear() override {
             Batch<T>::_batch.clear();
             _nestingLevel = _noNestingLevel;
-        }
-
-        std::string serialize() const override {
-            std::string serializedBatch = "";
-            if (Batch<T>::_batch.empty())
-                return serializedBatch;
-
-            serializedBatch += messages::BULK;
-            auto it = Batch<T>::_batch.cbegin();
-            serializedBatch += (" " + *it);
-            for (++it; it != Batch<T>::_batch.cend(); ++it)
-                serializedBatch += (", " + *it);
-            return serializedBatch;
         }
 
     private:
@@ -116,19 +117,6 @@ namespace handler {
     protected:
         void clear() override {
             Batch<T>::_batch.clear();
-        }
-
-        std::string serialize() const override {
-            std::string serializedBatch = "";
-            if (Batch<T>::_batch.empty())
-                return serializedBatch;
-
-            serializedBatch += messages::BULK;
-            auto it = Batch<T>::_batch.cbegin();
-            serializedBatch += (" " + *it);
-            for (++it; it != Batch<T>::_batch.cend(); ++it)
-                serializedBatch += (", " + *it);
-            return serializedBatch;
         }
     };
 }

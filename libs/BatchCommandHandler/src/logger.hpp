@@ -12,7 +12,7 @@ namespace handler {
         Logger& operator=(Logger &&) = delete;
         
         static Logger& instance();
-        void log(const std::string& name, const std::string_view string) const;
+        void log(const std::string& string) const;
 
     private:
         Logger() = default;
