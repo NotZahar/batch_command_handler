@@ -7,5 +7,6 @@ var searchData=
   ['batchcommandhandler_8',['BatchCommandHandler',['../classhandler_1_1BatchCommandHandler.html#af3231cf741956326cdd4abae8d820b01',1,'handler::BatchCommandHandler::BatchCommandHandler()=delete'],['../classhandler_1_1BatchCommandHandler.html#a2dcf9ba721b1a1c8a50da43bf6b39756',1,'handler::BatchCommandHandler::BatchCommandHandler(int batchSize)'],['../classhandler_1_1BatchCommandHandler.html',1,'handler::BatchCommandHandler']]],
   ['blockexists_9',['blockExists',['../classhandler_1_1DBatch.html#a67aa736a6bd9d35edb150f4d62156d3b',1,'handler::DBatch']]],
   ['bulk_10',['BULK',['../structhandler_1_1messages.html#a48c72a367a99fdc23716b6e4ff21dc04',1,'handler::messages']]],
-  ['bulk_2ecpp_11',['bulk.cpp',['../bulk_8cpp.html',1,'']]]
+  ['bulk_2ecpp_11',['bulk.cpp',['../bulk_8cpp.html',1,'']]],
+  ['bulk_5fcontent_12',['BULK_CONTENT',['../structhandler_1_1messages.html#a029e636f0f0d0e0e01206f484ec22963',1,'handler::messages']]]
 ];
